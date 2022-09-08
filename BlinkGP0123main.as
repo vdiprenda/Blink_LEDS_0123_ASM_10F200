@@ -5,7 +5,7 @@
 ; Date:     2022-09-10
 ; Compiler: pic-as(v2.30)
 ; IDE:      MPLABX v5.40
-; CERTIFIED : 
+; CERTIFIED : 09/09/2022 vjd
 ;   
 ; GPIO has special properties. WHen I try to run the blink logic, it simply stays on
 ; Let's read the doc and see how to handle the special case.
