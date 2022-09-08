@@ -6,9 +6,10 @@
 ; Compiler: pic-as(v2.30)
 ; IDE:      MPLABX v5.40
 ; CERTIFIED : 
-[    
+;   
 ; GPIO has special properties. WHen I try to run the blink logic, it simply stays on
-; Let's read the doc and see how to handle the special case
+; Let's read the doc and see how to handle the special case.
+; UPDATE: GP3 is input only
 ;
 ; Description:
 ;
@@ -60,7 +61,7 @@ Start:
     movwf   CMCON0
 #endif
 
-    movlw   11110000B   ;set GP2 to output direction
+    movlw   11111000B   ;set GP2 to output direction
     tris    GPIO
     
 Loop:
@@ -70,8 +71,8 @@ Loop:
     call    Delay
     BCF     GPIO,GPIO_GP2_POSITION
     call    Delay   
-    BCF     GPIO,GPIO_GP3_POSITION
-    call    Delay
+    ; BCF     GPIO,GPIO_GP3_POSITION
+    ; call    Delay
     
     BSF     GPIO,GPIO_GP0_POSITION ;turn LED off again
     call    Delay
@@ -79,8 +80,8 @@ Loop:
     call    Delay
     BSF     GPIO,GPIO_GP2_POSITION ;turn LED off again
     call    Delay
-    BSF     GPIO,GPIO_GP3_POSITION ;turn LED off again
-    call    Delay
+    ; BSF     GPIO,GPIO_GP3_POSITION ;turn LED off again
+    ; call    Delay
     
     goto    Loop        ;loop forever
     
