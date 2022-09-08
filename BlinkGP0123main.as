@@ -6,6 +6,9 @@
 ; Compiler: pic-as(v2.30)
 ; IDE:      MPLABX v5.40
 ; CERTIFIED : 
+[    
+; GPIO has special properties. WHen I try to run the blink logic, it simply stays on
+; Let's read the doc and see how to handle the special case
 ;
 ; Description:
 ;
